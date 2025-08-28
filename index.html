@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auraro International Shipping - Tracking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Auraro International Shipping</h1>
+
+  <div class="tracking-box">
+    <h2>Track Your Shipment</h2>
+    <input type="text" id="trackingInput" placeholder="Enter Tracking Number">
+    <button onclick="checkTracking()">Track</button>
+    <p id="errorMessage" style="color:red; display:none;">Invalid tracking number. Please try again.</p>
+  </div>
+
+  <div id="shipmentDetails" style="display:none;">
+    <h2>Shipment Details</h2>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+      <tr>
+        <th>Date & Time</th>
+        <th>Status</th>
+        <th>Location</th>
+      </tr>
+      <tr>
+        <td>29th August 2025, 11:00 AM</td>
+        <td>Item received from shipper</td>
+        <td>Saint Petersburg, Russia</td>
+      </tr>
+      <tr>
+        <td>—</td>
+        <td>In Transit</td>
+        <td>—</td>
+      </tr>
+    </table>
+
+    <h3>Shipper Information</h3>
+    <p><b>Name:</b> Ron Delucca</p>
+    <p><b>Location:</b> Russia</p>
+    <p><b>Email:</b> deluccar1948@gmail.com</p>
+
+    <h3>Receiver Information</h3>
+    <p><b>Name:</b> Matthew Joseph Estilette</p>
+    <p><b>Location:</b> USA</p>
+    <p><b>Address:</b> 1113 David St, New Iberia, LA 70560, USA</p>
+
+    <h3>Expected Delivery:</h3>
+    <p>3rd September 2025 by end of the day</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
