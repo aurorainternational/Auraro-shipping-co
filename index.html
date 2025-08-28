@@ -59,28 +59,48 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     }
 
-    .tracking-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      font-size: 14px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    /* Timeline Styles */
+    .timeline {
+      position: relative;
+      margin: 20px 0;
+      padding-left: 40px;
     }
 
-    .tracking-table th, .tracking-table td {
-      padding: 12px;
-      border: 1px solid #ddd;
-      vertical-align: top;
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #0073e6;
     }
 
-    .tracking-table th {
-      background-color: #0073e6;
-      color: #fff;
-      font-weight: bold;
+    .timeline-event {
+      position: relative;
+      margin-bottom: 30px;
+      padding: 10px 20px;
+      background: #f9f9f9;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .tracking-table tr:nth-child(even) { background-color: #f2f6fc; }
-    .tracking-table tr:hover { background-color: #e1f0ff; }
+    .timeline-event::before {
+      content: '';
+      position: absolute;
+      left: -32px;
+      top: 15px;
+      width: 16px;
+      height: 16px;
+      background: #0073e6;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px #0073e6;
+    }
+
+    .timeline-event p {
+      margin: 5px 0;
+    }
 
     .proof-image {
       display: block;
@@ -119,38 +139,28 @@
         <p><strong>Expected Delivery:</strong> 3rd September 2025 by end of the day</p>
       </div>
 
-      <!-- Tracking History Table -->
+      <!-- Timeline -->
       <h3>Tracking History</h3>
-      <table class="tracking-table">
-        <thead>
-          <tr>
-            <th>Date & Time</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>Location</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>29th August 2025<br>11:00 AM</td>
-            <td>Item received from shipper</td>
-            <td>Received</td>
-            <td>Saint Petersburg, Russia</td>
-          </tr>
-          <tr>
-            <td>29th August 2025<br>11:10 AM</td>
-            <td>Item scanned at the sorting facility</td>
-            <td>Scanned</td>
-            <td>Saint Petersburg, Russia</td>
-          </tr>
-          <tr>
-            <td>29th August 2025<br>11:20 AM</td>
-            <td>Departed from the sorting facility</td>
-            <td>In Transit</td>
-            <td>Saint Petersburg, Russia</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="timeline">
+        <div class="timeline-event">
+          <p><b>Date & Time:</b> 29th August 2025, 11:00 AM</p>
+          <p><b>Description:</b> Item received from shipper</p>
+          <p><b>Status:</b> Received</p>
+          <p><b>Location:</b> Saint Petersburg, Russia</p>
+        </div>
+        <div class="timeline-event">
+          <p><b>Date & Time:</b> 29th August 2025, 11:10 AM</p>
+          <p><b>Description:</b> Item scanned at the sorting facility</p>
+          <p><b>Status:</b> Scanned</p>
+          <p><b>Location:</b> Saint Petersburg, Russia</p>
+        </div>
+        <div class="timeline-event">
+          <p><b>Date & Time:</b> 29th August 2025, 11:20 AM</p>
+          <p><b>Description:</b> Departed from the sorting facility</p>
+          <p><b>Status:</b> In Transit</p>
+          <p><b>Location:</b> Saint Petersburg, Russia</p>
+        </div>
+      </div>
 
       <!-- Separator -->
       <hr class="separator">
