@@ -10,6 +10,7 @@
   <div class="container">
     <h1>Auraro International Shipping</h1>
 
+    <!-- Tracking Input -->
     <div class="tracking-box">
       <h2>Track Your Shipment</h2>
       <input type="text" id="trackingInput" placeholder="Enter Tracking Number">
@@ -17,10 +18,11 @@
       <p id="errorMessage" style="color:red; display:none;">Invalid tracking number. Please try again.</p>
     </div>
 
+    <!-- Shipment Details -->
     <div id="shipmentDetails" style="display:none;">
       <!-- Status and Expected Delivery -->
       <div class="status-info">
-        <p><strong>Status:</strong> <span class="status-badge">🚚 In Transit</span></p>
+        <p><strong>Status:</strong> <span class="status-badge in-transit">🚚 In Transit</span></p>
         <p><strong>Expected Delivery:</strong> 3rd September 2025 by end of the day</p>
       </div>
 
@@ -37,38 +39,4 @@
         </thead>
         <tbody>
           <tr>
-            <td>29th August 2025, 11:00 AM</td>
-            <td>Item received from shipper</td>
-            <td>📦 Received</td>
-            <td>Saint Petersburg, Russia</td>
-          </tr>
-          <tr>
-            <td>—</td>
-            <td>—</td>
-            <td>🚚 In Transit</td>
-            <td>—</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <!-- Shipper Info -->
-      <h3>Shipper Information</h3>
-      <p><b>Name:</b> Ron Delucca</p>
-      <p><b>Location:</b> Russia</p>
-      <p><b>Email:</b> deluccar1948@gmail.com</p>
-
-      <!-- Receiver Info -->
-      <h3>Receiver Information</h3>
-      <p><b>Name:</b> Matthew Joseph Estilette</p>
-      <p><b>Location:</b> USA</p>
-      <p><b>Address:</b> 1113 David St, New Iberia, LA 70560, USA</p>
-
-      <!-- Proof of Package -->
-      <h3>Proof of Package</h3>
-      <img src="proof.jpg" alt="Proof of Package" class="proof-image">
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+            <td>29th August 2025<br>11:00 AM</
