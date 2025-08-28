@@ -59,18 +59,6 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     }
 
-    .status-badge {
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 12px;
-      font-weight: bold;
-      color: #fff;
-    }
-
-    .status-badge.received { background-color: #28a745; }
-    .status-badge.in-transit { background-color: #ffc107; color: #333; }
-    .status-badge.pending { background-color: #6c757d; }
-
     .tracking-table {
       width: 100%;
       border-collapse: collapse;
@@ -121,7 +109,7 @@
     <div id="shipmentDetails" style="display:none;">
       <!-- Status and Expected Delivery -->
       <div class="status-info">
-        <p><strong>Status:</strong> <span class="status-badge in-transit">🚚 In Transit</span></p>
+        <p><strong>Status:</strong> In Transit</p>
         <p><strong>Expected Delivery:</strong> 3rd September 2025 by end of the day</p>
       </div>
 
@@ -140,7 +128,7 @@
           <tr>
             <td>29th August 2025<br>11:00 AM</td>
             <td>Item received from shipper</td>
-            <td><span class="status-badge received">📦 Received</span></td>
+            <td>Received</td>
             <td>Saint Petersburg, Russia</td>
           </tr>
         </tbody>
