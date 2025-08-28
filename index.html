@@ -63,13 +63,13 @@
     .timeline {
       position: relative;
       margin: 20px 0;
-      padding-left: 40px;
+      padding-left: 50px;
     }
 
     .timeline::before {
       content: '';
       position: absolute;
-      left: 20px;
+      left: 25px;
       top: 0;
       bottom: 0;
       width: 4px;
@@ -86,13 +86,17 @@
     }
 
     .timeline-event::before {
-      content: '';
+      content: attr(data-icon);
       position: absolute;
-      left: -32px;
-      top: 15px;
-      width: 16px;
-      height: 16px;
+      left: -36px;
+      top: 12px;
+      width: 28px;
+      height: 28px;
+      text-align: center;
+      line-height: 28px;
+      font-size: 16px;
       background: #0073e6;
+      color: #fff;
       border-radius: 50%;
       border: 3px solid #fff;
       box-shadow: 0 0 0 2px #0073e6;
@@ -142,19 +146,19 @@
       <!-- Timeline -->
       <h3>Tracking History</h3>
       <div class="timeline">
-        <div class="timeline-event">
+        <div class="timeline-event" data-icon="✅">
           <p><b>Date & Time:</b> 29th August 2025, 11:00 AM</p>
           <p><b>Description:</b> Item received from shipper</p>
           <p><b>Status:</b> Received</p>
           <p><b>Location:</b> Saint Petersburg, Russia</p>
         </div>
-        <div class="timeline-event">
+        <div class="timeline-event" data-icon="📦">
           <p><b>Date & Time:</b> 29th August 2025, 11:10 AM</p>
           <p><b>Description:</b> Item scanned at the sorting facility</p>
           <p><b>Status:</b> Scanned</p>
           <p><b>Location:</b> Saint Petersburg, Russia</p>
         </div>
-        <div class="timeline-event">
+        <div class="timeline-event" data-icon="✈️">
           <p><b>Date & Time:</b> 29th August 2025, 11:20 AM</p>
           <p><b>Description:</b> Departed from the sorting facility</p>
           <p><b>Status:</b> In Transit</p>
