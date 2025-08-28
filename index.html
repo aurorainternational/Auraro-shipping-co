@@ -18,14 +18,19 @@
     </div>
 
     <div id="shipmentDetails" style="display:none;">
-      <p><strong>Status:</strong> <span class="status-badge">🚚 In Transit</span></p>
-      <p><strong>Expected Delivery:</strong> 3rd September 2025 by end of the day</p>
+      <!-- Status and Expected Delivery -->
+      <div class="status-info">
+        <p><strong>Status:</strong> <span class="status-badge">🚚 In Transit</span></p>
+        <p><strong>Expected Delivery:</strong> 3rd September 2025 by end of the day</p>
+      </div>
 
+      <!-- Tracking History Table -->
       <h3>Tracking History</h3>
       <table class="tracking-table">
         <thead>
           <tr>
             <th>Date & Time</th>
+            <th>Description</th>
             <th>Status</th>
             <th>Location</th>
           </tr>
@@ -33,10 +38,12 @@
         <tbody>
           <tr>
             <td>29th August 2025, 11:00 AM</td>
-            <td>📦 Item received from shipper</td>
+            <td>Item received from shipper</td>
+            <td>📦 Received</td>
             <td>Saint Petersburg, Russia</td>
           </tr>
           <tr>
+            <td>—</td>
             <td>—</td>
             <td>🚚 In Transit</td>
             <td>—</td>
@@ -44,16 +51,19 @@
         </tbody>
       </table>
 
+      <!-- Shipper Info -->
       <h3>Shipper Information</h3>
       <p><b>Name:</b> Ron Delucca</p>
       <p><b>Location:</b> Russia</p>
       <p><b>Email:</b> deluccar1948@gmail.com</p>
 
+      <!-- Receiver Info -->
       <h3>Receiver Information</h3>
       <p><b>Name:</b> Matthew Joseph Estilette</p>
       <p><b>Location:</b> USA</p>
       <p><b>Address:</b> 1113 David St, New Iberia, LA 70560, USA</p>
 
+      <!-- Proof of Package -->
       <h3>Proof of Package</h3>
       <img src="proof.jpg" alt="Proof of Package" class="proof-image">
     </div>
