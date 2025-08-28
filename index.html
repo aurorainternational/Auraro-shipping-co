@@ -20,29 +20,24 @@
 
     <!-- Shipment details (hidden by default) -->
     <div id="shipmentDetails" style="display:none;">
-      <!-- Status and Expected Delivery at the top -->
+      <!-- Status and Expected Delivery -->
       <p><strong>Status:</strong> <span class="status-badge">🚚 In Transit</span></p>
       <p><strong>Expected Delivery:</strong> 3rd September 2025 by end of the day</p>
 
-      <!-- Tracking History -->
+      <!-- Horizontal Timeline -->
       <h3>Tracking History</h3>
-      <table>
-        <tr>
-          <th>Date & Time</th>
-          <th>Status</th>
-          <th>Location</th>
-        </tr>
-        <tr>
-          <td>29th August 2025, 11:00 AM</td>
-          <td>📦 Item received from shipper</td>
-          <td>Saint Petersburg, Russia</td>
-        </tr>
-        <tr>
-          <td>—</td>
-          <td>🚚 In Transit</td>
-          <td>—</td>
-        </tr>
-      </table>
+      <div class="timeline-horizontal">
+        <div class="timeline-event">
+          <div class="timeline-icon">📦</div>
+          <p><strong>29 Aug 2025</strong></p>
+          <p>Received – Saint Petersburg, Russia</p>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-icon">🚚</div>
+          <p><strong>—</strong></p>
+          <p>In Transit</p>
+        </div>
+      </div>
 
       <!-- Shipper and Receiver Info -->
       <h3>Shipper Information</h3>
@@ -54,6 +49,10 @@
       <p><b>Name:</b> Matthew Joseph Estilette</p>
       <p><b>Location:</b> USA</p>
       <p><b>Address:</b> 1113 David St, New Iberia, LA 70560, USA</p>
+
+      <!-- Proof of Package -->
+      <h3>Proof of Package</h3>
+      <img src="proof.jpg" alt="Proof of Package" class="proof-image">
     </div>
   </div>
 
