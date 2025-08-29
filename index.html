@@ -1,206 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auraro International Shipping - Tracking</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f7fb;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-
-    h1, h2, h3 {
-      text-align: center;
-      color: #222;
-    }
-
-    .tracking-box {
-      width: 90%;
-      max-width: 600px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    input[type="text"] {
-      width: 70%;
-      padding: 10px;
-      margin-right: 10px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      background-color: #0073e6;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #005bb5;
-    }
-
-    #shipmentDetails {
-      margin: 20px auto;
-      width: 90%;
-      max-width: 900px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-    }
-
-    /* Timeline Styles */
-    .timeline {
-      position: relative;
-      margin: 20px 0;
-      padding-left: 50px;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 25px;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: #0073e6;
-    }
-
-    .timeline-event {
-      position: relative;
-      margin-bottom: 30px;
-      padding: 10px 20px;
-      background: #f9f9f9;
-      border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .timeline-event::before {
-      content: attr(data-icon);
-      position: absolute;
-      left: -36px;
-      top: 12px;
-      width: 28px;
-      height: 28px;
-      text-align: center;
-      line-height: 28px;
-      font-size: 16px;
-      background: #0073e6;
-      color: #fff;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      box-shadow: 0 0 0 2px #0073e6;
-    }
-
-    .timeline-event p {
-      margin: 5px 0;
-    }
-
-    .proof-image {
-      display: block;
-      margin: 15px auto;
-      max-width: 400px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-
-    hr.separator {
-      margin: 30px 0;
-      border: 0;
-      border-top: 2px solid #ddd;
-    }
-
-    #errorMessage { font-weight: bold; text-align: center; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Auraro International Shipping</h1>
-
-    <!-- Tracking Input -->
-    <div class="tracking-box">
-      <h2>Track Your Shipment</h2>
-      <input type="text" id="trackingInput" placeholder="Enter Tracking Number">
-      <button onclick="checkTracking()">Track</button>
-      <p id="errorMessage" style="color:red; display:none;">Invalid tracking number. Please try again.</p>
-    </div>
-
-    <!-- Shipment Details -->
-    <div id="shipmentDetails" style="display:none;">
-      <!-- Status and Expected Delivery -->
-      <div class="status-info">
-        <p><strong>Status:</strong> In Transit</p>
-        <p><strong>Expected Delivery:</strong> 3rd September 2025 by end of the day</p>
-      </div>
-
-      <!-- Timeline -->
-      <h3>Tracking History</h3>
-      <div class="timeline">
-        <div class="timeline-event" data-icon="✅">
-          <p><b>Date & Time:</b> 29th August 2025, 11:00 AM</p>
-          <p><b>Description:</b> Item received from shipper</p>
-          <p><b>Status:</b> Received</p>
-          <p><b>Location:</b> Saint Petersburg, Russia</p>
-        </div>
-        <div class="timeline-event" data-icon="📦">
-          <p><b>Date & Time:</b> 29th August 2025, 11:10 AM</p>
-          <p><b>Description:</b> Item scanned at the sorting facility</p>
-          <p><b>Status:</b> Scanned</p>
-          <p><b>Location:</b> Saint Petersburg, Russia</p>
-        </div>
-        <div class="timeline-event" data-icon="✈️">
-          <p><b>Date & Time:</b> 29th August 2025, 11:20 AM</p>
-          <p><b>Description:</b> Departed from the sorting facility</p>
-          <p><b>Status:</b> In Transit</p>
-          <p><b>Location:</b> Saint Petersburg, Russia</p>
-        </div>
-      </div>
-
-      <!-- Separator -->
-      <hr class="separator">
-
-      <!-- Shipper Info -->
-      <h3>Shipper Information</h3>
-      <p><b>Name:</b> Ron Delucca</p>
-      <p><b>Location:</b> Russia</p>
-      <p><b>Email:</b> deluccar1948@gmail.com</p>
-
-      <!-- Receiver Info -->
-      <h3>Receiver Information</h3>
-      <p><b>Name:</b> Matthew Joseph Estilette</p>
-      <p><b>Location:</b> USA</p>
-      <p><b>Address:</b> 1113 David St, New Iberia, LA 70560, USA</p>
-
-      <!-- Proof of Package -->
-      <h3>Proof of Package</h3>
-      <img src="proof.jpg" alt="Proof of Package" class="proof-image">
-    </div>
+<h3>Tracking History</h3>
+<div class="timeline">
+  <div class="timeline-event" data-icon="✅">
+    <p><b>Date & Time:</b> 29th August 2025, 11:00 AM</p>
+    <p><b>Description:</b> Item received from shipper</p>
+    <p><b>Status:</b> Received</p>
+    <p><b>Location:</b> Saint Petersburg, Russia</p>
+  </div>
+  <div class="timeline-event" data-icon="📦">
+    <p><b>Date & Time:</b> 29th August 2025, 11:10 AM</p>
+    <p><b>Description:</b> Item scanned at the sorting facility</p>
+    <p><b>Status:</b> Scanned</p>
+    <p><b>Location:</b> Saint Petersburg, Russia</p>
+  </div>
+  <div class="timeline-event" data-icon="✈️">
+    <p><b>Date & Time:</b> 29th August 2025, 11:20 AM</p>
+    <p><b>Description:</b> Departed from the sorting facility</p>
+    <p><b>Status:</b> In Transit</p>
+    <p><b>Location:</b> Saint Petersburg, Russia</p>
   </div>
 
-  <script>
-    function checkTracking() {
-      const trackingInput = document.getElementById("trackingInput").value.trim();
-      const shipmentDetails = document.getElementById("shipmentDetails");
-      const errorMessage = document.getElementById("errorMessage");
-
-      if (trackingInput === "TR599652932") {
-        shipmentDetails.style.display = "block";
-        errorMessage.style.display = "none";
-      } else {
-        shipmentDetails.style.display = "none";
-        errorMessage.style.display = "block";
-      }
-    }
-  </script>
-</body>
-</html>
+  <!-- Estonia Tracking Entries (chronological order) -->
+  <div class="timeline-event" data-icon="📍">
+    <p><b>Date & Time:</b> 29th August 2025, 2:15 PM</p>
+    <p><b>Description:</b> Item arrived at sorting facility</p>
+    <p><b>Status:</b> Arrived</p>
+    <p><b>Location:</b> Tallinn, Estonia</p>
+  </div>
+  <div class="timeline-event" data-icon="📦">
+    <p><b>Date & Time:</b> 29th August 2025, 2:30 PM</p>
+    <p><b>Description:</b> Item scanned at sorting facility</p>
+    <p><b>Status:</b> Scanned</p>
+    <p><b>Location:</b> Tallinn, Estonia</p>
+  </div>
+  <div class="timeline-event" data-icon="✈️">
+    <p><b>Date & Time:</b> 29th August 2025, 3:15 PM</p>
+    <p><b>Description:</b> Departed from sorting facility</p>
+    <p><b>Status:</b> In Transit</p>
+    <p><b>Location:</b> Tallinn, Estonia</p>
+  </div>
+</div>
