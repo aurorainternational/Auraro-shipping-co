@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>American Winners Shipping Co - Tracking</title>
+  <title>Auraro International Shipping Co</title>
   <style>
     body {
         font-family: Arial, sans-serif;
@@ -121,109 +121,80 @@
     #errorMessage {
         font-weight: bold;
         color: red;
-        display: none;
         text-align: center;
+        margin-top: 15px;
     }
   </style>
 </head>
 <body>
 
-  <h1>American Winners Shipping Co</h1>
-  <h3>Track Your Shipment</h3>
+  <h1>Auraro International Shipping Co</h1>
+  <h2>Track Your Shipment</h2>
 
   <div class="tracking-box">
     <input type="text" id="trackingInput" placeholder="Enter Tracking Code">
     <button onclick="checkTracking()">Track</button>
-    <p id="errorMessage">❌ Invalid tracking code. Please try again.</p>
+    <p id="errorMessage" style="display:none;">❌ Invalid Tracking Code. Please try again.</p>
   </div>
 
   <div id="shipmentDetails">
-    <h2>Shipment Details</h2>
+    <h3>Shipment Details</h3>
     <p><strong>Tracking Code:</strong> TR599652932</p>
-    <p><strong>Status:</strong> <span class="status-badge in-transit">🟡 In Transit – Item departed from Estonia Tallinn</span></p>
     <p><strong>Shipper:</strong> Robert Agent Wood, Florida (<a href="mailto:robertagentwood@gmail.com">robertagentwood@gmail.com</a>)</p>
     <p><strong>Recipient:</strong> Paul Wood, 35916 E 231st St S, Porter, Oklahoma, 74454, USA</p>
-    <p><strong>Expected Delivery:</strong> 22 July 2025 (by end of day)</p>
-
-    <img src="proof.jpg" alt="Proof of Package" class="proof-image">
+    <p><strong>Status:</strong> <span class="status-badge in-transit">🟡 In Transit – Item departed from Alabama</span></p>
+    <p><strong>Current Location:</strong> Oklahoma</p>
+    <p><strong>Expected Delivery Date:</strong> 22 July 2025 (End of Day)</p>
 
     <h3>Shipment History</h3>
     <table class="tracking-table">
-      <thead>
-        <tr>
-          <th>Date & Time</th>
-          <th>Location</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>25th June 2025, 9:00 AM</td>
-          <td>Florida</td>
-          <td>Item received from shipper</td>
-        </tr>
-        <tr>
-          <td>25th June 2025, 9:30 AM</td>
-          <td>Florida</td>
-          <td>Item departed from sorting facility</td>
-        </tr>
-        <tr>
-          <td>25th June 2025, 10:30 AM</td>
-          <td>Jacksonville</td>
-          <td>Item arrived at Jacksonville</td>
-        </tr>
-        <tr>
-          <td>25th June 2025</td>
-          <td>Jacksonville</td>
-          <td>Item departed from sorting facility</td>
-        </tr>
-        <tr>
-          <td>25th June 2025, 12:00 PM</td>
-          <td>Florida</td>
-          <td>Item received from shipper</td>
-        </tr>
-        <tr>
-          <td>25th June 2025, 1:30 PM</td>
-          <td>Florida</td>
-          <td>Item departed from sorting facility</td>
-        </tr>
-        <tr>
-          <td>1st July 2025, 7:45 PM</td>
-          <td>Georgia</td>
-          <td>Item departed from sorting facility</td>
-        </tr>
-        <tr>
-          <td>1st July 2025, 7:45 PM</td>
-          <td>Alabama</td>
-          <td>Item stopped</td>
-        </tr>
-        <tr>
-          <td>21st July 2025, 10:00 PM</td>
-          <td>Alabama</td>
-          <td>Item departed</td>
-        </tr>
-        <tr>
-          <td>22nd July 2025, 7:00 AM</td>
-          <td>Oklahoma</td>
-          <td>Item arrived</td>
-        </tr>
-        <tr>
-          <td>29th August 2025, 2:15 PM</td>
-          <td>Estonia, Tallinn</td>
-          <td>Item arrived at Estonia Tallinn</td>
-        </tr>
-        <tr>
-          <td>29th August 2025, 2:30 PM</td>
-          <td>Estonia, Tallinn</td>
-          <td>Item scanned at Tallinn facility</td>
-        </tr>
-        <tr>
-          <td>29th August 2025, 3:15 PM</td>
-          <td>Estonia, Tallinn</td>
-          <td>Item departed from Estonia Tallinn</td>
-        </tr>
-      </tbody>
+      <tr>
+        <th>Date & Time</th>
+        <th>Event</th>
+      </tr>
+      <tr>
+        <td>June 25, 2025, 9:00 AM</td>
+        <td>Item received from shipper</td>
+      </tr>
+      <tr>
+        <td>June 25, 2025, 9:30 AM</td>
+        <td>Item departed from sorting facility in Florida</td>
+      </tr>
+      <tr>
+        <td>June 25, 2025, 10:30 AM</td>
+        <td>Item arrived at Jacksonville</td>
+      </tr>
+      <tr>
+        <td>June 25, 2025</td>
+        <td>Item departed from a sorting facility in Jacksonville</td>
+      </tr>
+      <tr>
+        <td>June 25, 2025, 12:00 PM</td>
+        <td>Item received from shipper</td>
+      </tr>
+      <tr>
+        <td>June 25, 2025, 1:30 PM</td>
+        <td>Item departed from sorting facility in Florida</td>
+      </tr>
+      <tr>
+        <td>July 1, 2025, 7:45 PM</td>
+        <td>Item departed from a sorting facility in Georgia</td>
+      </tr>
+      <tr>
+        <td>July 1, 2025, 7:45 PM</td>
+        <td>Item stopped at Alabama</td>
+      </tr>
+      <tr>
+        <td>July 21, 2025, 10:00 PM</td>
+        <td>Item departed from Alabama</td>
+      </tr>
+      <tr>
+        <td>July 22, 2025, 7:00 AM</td>
+        <td>Item arrived in Oklahoma</td>
+      </tr>
     </table>
+
+    <img src="proof.jpg" alt="Proof of Package" class="proof-image">
   </div>
 
   <script>
@@ -241,6 +212,5 @@
       }
     }
   </script>
-
 </body>
 </html>
