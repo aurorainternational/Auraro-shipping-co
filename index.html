@@ -1,41 +1,201 @@
-<h3>Tracking History</h3>
-<div class="timeline">
-  <div class="timeline-event" data-icon="✅">
-    <p><b>Date & Time:</b> 29th August 2025, 11:00 AM</p>
-    <p><b>Description:</b> Item received from shipper</p>
-    <p><b>Status:</b> Received</p>
-    <p><b>Location:</b> Saint Petersburg, Russia</p>
-  </div>
-  <div class="timeline-event" data-icon="📦">
-    <p><b>Date & Time:</b> 29th August 2025, 11:10 AM</p>
-    <p><b>Description:</b> Item scanned at the sorting facility</p>
-    <p><b>Status:</b> Scanned</p>
-    <p><b>Location:</b> Saint Petersburg, Russia</p>
-  </div>
-  <div class="timeline-event" data-icon="✈️">
-    <p><b>Date & Time:</b> 29th August 2025, 11:20 AM</p>
-    <p><b>Description:</b> Departed from the sorting facility</p>
-    <p><b>Status:</b> In Transit</p>
-    <p><b>Location:</b> Saint Petersburg, Russia</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipment Tracking - American Winners Shipping Co</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .tracking-input {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .tracking-input input {
+      padding: 10px;
+      width: 60%;
+      font-size: 16px;
+    }
+    .tracking-input button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #003366;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .tracking-info {
+      display: none;
+    }
+    h2 {
+      color: #003366;
+    }
+    .timeline {
+      margin-top: 20px;
+      border-left: 3px solid #003366;
+      padding-left: 20px;
+    }
+    .timeline-event {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .timeline-event::before {
+      content: attr(data-icon);
+      position: absolute;
+      left: -35px;
+      background: #003366;
+      color: #fff;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      line-height: 25px;
+      border-radius: 50%;
+      font-size: 14px;
+    }
+    .proof {
+      margin-top: 20px;
+    }
+    .proof img {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>American Winners Shipping Co - Shipment Tracking</h1>
+  </header>
+  <div class="container">
+    <div class="tracking-input">
+      <input type="text" id="trackingNumber" placeholder="Enter your tracking number">
+      <button onclick="checkTracking()">Track</button>
+    </div>
+
+    <div id="trackingInfo" class="tracking-info">
+      <h2>Shipment Details</h2>
+      <p><b>Tracking Code:</b> TR599652932</p>
+      <p><b>Shipper:</b> Robert Agent Wood, Florida (<a href="mailto:robertagentwood@gmail.com">robertagentwood@gmail.com</a>)</p>
+      <p><b>Recipient:</b> Paul Wood, 35916 E 231st St S, Porter, Oklahoma, 74454, USA</p>
+      <p><b>Shipment Method:</b> By Flight</p>
+      <p><b>Status:</b> 🟡 In Transit – Item departed from Alabama</p>
+      <p><b>Current Location:</b> Oklahoma</p>
+      <p><b>Expected Delivery Date:</b> 22 July 2025 (End of Day)</p>
+
+      <!-- Timeline -->
+      <h3>Tracking History</h3>
+      <div class="timeline">
+        <div class="timeline-event" data-icon="✅">
+          <p><b>Date & Time:</b> 25th June 2025, 9:00 AM</p>
+          <p><b>Description:</b> Item received from shipper</p>
+          <p><b>Location:</b> Florida</p>
+        </div>
+        <div class="timeline-event" data-icon="✈️">
+          <p><b>Date & Time:</b> 25th June 2025, 9:30 AM</p>
+          <p><b>Description:</b> Item departed from sorting facility</p>
+          <p><b>Location:</b> Florida</p>
+        </div>
+        <div class="timeline-event" data-icon="📍">
+          <p><b>Date & Time:</b> 25th June 2025, 10:30 AM</p>
+          <p><b>Description:</b> Item arrived at Jacksonville</p>
+          <p><b>Location:</b> Jacksonville</p>
+        </div>
+        <div class="timeline-event" data-icon="✈️">
+          <p><b>Date & Time:</b> 25th June 2025</p>
+          <p><b>Description:</b> Item departed from sorting facility</p>
+          <p><b>Location:</b> Jacksonville</p>
+        </div>
+        <div class="timeline-event" data-icon="✅">
+          <p><b>Date & Time:</b> 25th June 2025, 12:00 PM</p>
+          <p><b>Description:</b> Item received from shipper</p>
+          <p><b>Location:</b> Florida</p>
+        </div>
+        <div class="timeline-event" data-icon="✈️">
+          <p><b>Date & Time:</b> 25th June 2025, 1:30 PM</p>
+          <p><b>Description:</b> Item departed from sorting facility</p>
+          <p><b>Location:</b> Florida</p>
+        </div>
+        <div class="timeline-event" data-icon="✈️">
+          <p><b>Date & Time:</b> 1st July 2025, 7:45 PM</p>
+          <p><b>Description:</b> Item departed from sorting facility</p>
+          <p><b>Location:</b> Georgia</p>
+        </div>
+        <div class="timeline-event" data-icon="📍">
+          <p><b>Date & Time:</b> 1st July 2025, 7:45 PM</p>
+          <p><b>Description:</b> Item stopped</p>
+          <p><b>Location:</b> Alabama</p>
+        </div>
+        <div class="timeline-event" data-icon="✈️">
+          <p><b>Date & Time:</b> 21st July 2025, 10:00 PM</p>
+          <p><b>Description:</b> Item departed</p>
+          <p><b>Location:</b> Alabama</p>
+        </div>
+        <div class="timeline-event" data-icon="📍">
+          <p><b>Date & Time:</b> 22nd July 2025, 7:00 AM</p>
+          <p><b>Description:</b> Item arrived</p>
+          <p><b>Location:</b> Oklahoma</p>
+        </div>
+
+        <!-- ✅ Estonia Updates -->
+        <div class="timeline-event" data-icon="📍">
+          <p><b>Date & Time:</b> 29th August 2025, 2:15 PM</p>
+          <p><b>Description:</b> Item arrived at sorting facility</p>
+          <p><b>Location:</b> Tallinn, Estonia</p>
+        </div>
+        <div class="timeline-event" data-icon="📦">
+          <p><b>Date & Time:</b> 29th August 2025, 2:30 PM</p>
+          <p><b>Description:</b> Item scanned at sorting facility</p>
+          <p><b>Location:</b> Tallinn, Estonia</p>
+        </div>
+        <div class="timeline-event" data-icon="✈️">
+          <p><b>Date & Time:</b> 29th August 2025, 3:15 PM</p>
+          <p><b>Description:</b> Item departed from sorting facility</p>
+          <p><b>Location:</b> Tallinn, Estonia</p>
+        </div>
+      </div>
+
+      <!-- Proof of Package -->
+      <div class="proof">
+        <h3>Proof of Package</h3>
+        <img src="package.jpg" alt="Proof of package">
+      </div>
+    </div>
   </div>
 
-  <!-- Estonia Tracking Entries (chronological order) -->
-  <div class="timeline-event" data-icon="📍">
-    <p><b>Date & Time:</b> 29th August 2025, 2:15 PM</p>
-    <p><b>Description:</b> Item arrived at sorting facility</p>
-    <p><b>Status:</b> Arrived</p>
-    <p><b>Location:</b> Tallinn, Estonia</p>
-  </div>
-  <div class="timeline-event" data-icon="📦">
-    <p><b>Date & Time:</b> 29th August 2025, 2:30 PM</p>
-    <p><b>Description:</b> Item scanned at sorting facility</p>
-    <p><b>Status:</b> Scanned</p>
-    <p><b>Location:</b> Tallinn, Estonia</p>
-  </div>
-  <div class="timeline-event" data-icon="✈️">
-    <p><b>Date & Time:</b> 29th August 2025, 3:15 PM</p>
-    <p><b>Description:</b> Departed from sorting facility</p>
-    <p><b>Status:</b> In Transit</p>
-    <p><b>Location:</b> Tallinn, Estonia</p>
-  </div>
-</div>
+  <script>
+    function checkTracking() {
+      const input = document.getElementById("trackingNumber").value.trim();
+      const trackingInfo = document.getElementById("trackingInfo");
+      if (input === "TR599652932") {
+        trackingInfo.style.display = "block";
+      } else {
+        alert("Invalid tracking number. Please try again.");
+        trackingInfo.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
