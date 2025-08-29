@@ -3,32 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auraro International Shipping Co - Tracking</title>
+  <title>Auraro International Shipping Co</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
+      background: #f4f4f4;
       margin: 0;
       padding: 0;
-      text-align: center;
     }
     header {
-      background-color: #004080;
-      color: white;
-      padding: 20px 0;
+      background: #004080;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
     }
-    h1 {
-      margin: 0;
-    }
-    .tracking-box {
-      margin: 30px auto;
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: #fff;
       padding: 20px;
-      max-width: 500px;
-      background: white;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    input {
+    h2 { color: #004080; }
+    input[type="text"] {
       padding: 10px;
       width: 70%;
       border: 1px solid #ccc;
@@ -36,123 +34,103 @@
     }
     button {
       padding: 10px 20px;
-      background-color: #004080;
-      color: white;
+      background: #004080;
+      color: #fff;
       border: none;
-      border-radius: 4px;
       cursor: pointer;
+      border-radius: 4px;
     }
-    button:hover {
-      background-color: #0066cc;
+    button:hover { background: #003366; }
+    .error { color: red; margin-top: 10px; display: none; }
+    #shipment-details { display: none; margin-top: 20px; }
+    .info-box {
+      background: #f9f9f9;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 20px;
     }
-    #shipmentDetails {
-      display: none;
-      margin-top: 30px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: left;
+    .history {
+      border-top: 2px solid #004080;
+      padding-top: 10px;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
+    .history-item {
+      margin-bottom: 10px;
+      padding: 8px;
+      border-bottom: 1px solid #eee;
     }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: left;
-    }
-    th {
-      background-color: #004080;
-      color: white;
-    }
-    .error {
-      color: red;
-      margin-top: 15px;
-      display: none;
-    }
+    .history-item:last-child { border-bottom: none; }
   </style>
 </head>
 <body>
   <header>
     <h1>Auraro International Shipping Co</h1>
-    <p>Track Your Shipment</p>
   </header>
 
-  <div class="tracking-box">
-    <input type="text" id="trackingInput" placeholder="Enter Tracking Number">
-    <button onclick="checkTracking()">Track</button>
-    <p id="errorMessage" class="error">Invalid tracking number. Please try again.</p>
-  </div>
+  <div class="container">
+    <h2>Track Your Shipment</h2>
+    <form id="form">
+      <input type="text" id="tracking-number" placeholder="Enter Tracking Number">
+      <button type="submit">Track</button>
+    </form>
+    <p id="error-message" class="error">❌ Invalid tracking number. Please try again.</p>
 
-  <div id="shipmentDetails">
-    <h2>Shipment Details</h2>
-    <p><strong>Tracking Code:</strong> TR599652932</p>
-    <p><strong>Status:</strong> 🟡 In Transit – Item departed from Tallinn, Estonia</p>
-    <p><strong>Shipper:</strong> Robert Agent Wood, Saint Petersburg, Russia</p>
-    <p><strong>Recipient:</strong> Paul Wood, New Iberia, USA</p>
-    <p><strong>Expected Delivery Date:</strong> 5th September 2025</p>
+    <div id="shipment-details">
+      <div class="info-box">
+        <h3>Shipper Information</h3>
+        <p><strong>Name:</strong> Ron Delucca</p>
+        <p><strong>Location:</strong> Russia</p>
+        <p><strong>Email:</strong> deluccar1948@gmail.com</p>
+      </div>
 
-    <h3>Tracking History</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Date & Time</th>
-          <th>Location</th>
-          <th>Event</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>29th August 2025, 11:00 AM</td>
-          <td>Saint Petersburg, Russia</td>
-          <td>Item received from shipper</td>
-        </tr>
-        <tr>
-          <td>29th August 2025, 11:10 AM</td>
-          <td>Saint Petersburg, Russia</td>
-          <td>Item scanned</td>
-        </tr>
-        <tr>
-          <td>29th August 2025, 11:30 AM</td>
-          <td>Saint Petersburg, Russia</td>
-          <td>Item departed from sorting facility</td>
-        </tr>
-        <tr>
-          <td>29th August 2025, 2:15 PM</td>
-          <td>Tallinn, Estonia</td>
-          <td>Item arrived at sorting facility</td>
-        </tr>
-        <tr>
-          <td>29th August 2025, 2:30 PM</td>
-          <td>Tallinn, Estonia</td>
-          <td>Item scanned</td>
-        </tr>
-        <tr>
-          <td>29th August 2025, 3:15 PM</td>
-          <td>Tallinn, Estonia</td>
-          <td>Item departed from sorting facility</td>
-        </tr>
-      </tbody>
-    </table>
+      <div class="info-box">
+        <h3>Receiver Information</h3>
+        <p><strong>Name:</strong> Matthew Joseph Estilette</p>
+        <p><strong>Address:</strong> 1113 David St, New Iberia, LA 70560, USA</p>
+      </div>
+
+      <div class="info-box">
+        <h3>Shipment Details</h3>
+        <p><strong>Tracking Number:</strong> TR599652932</p>
+        <p><strong>Expected Delivery:</strong> 2nd September 2025 (End of Day)</p>
+        <p><strong>Status:</strong> 🟡 In Transit</p>
+      </div>
+
+      <div class="history">
+        <h3>Shipment History</h3>
+        <div class="history-item">
+          📍 <strong>29 Aug 2025, 11:10 AM</strong> — Item scanned — Location: Saint Petersburg, Russia
+        </div>
+        <div class="history-item">
+          📍 <strong>29 Aug 2025, 11:30 AM</strong> — Item departed from sorting facility — Location: Saint Petersburg, Russia
+        </div>
+        <div class="history-item">
+          📍 <strong>29 Aug 2025, 2:15 PM</strong> — Item arrived — Location: Tallinn, Estonia
+        </div>
+        <div class="history-item">
+          📍 <strong>29 Aug 2025, 2:30 PM</strong> — Item scanned — Location: Tallinn, Estonia
+        </div>
+        <div class="history-item">
+          📍 <strong>29 Aug 2025, 3:15 PM</strong> — Item departed from Tallinn, Estonia
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
-    function checkTracking() {
-      const trackingInput = document.getElementById("trackingInput").value.trim();
-      const shipmentDetails = document.getElementById("shipmentDetails");
-      const errorMessage = document.getElementById("errorMessage");
+    document.getElementById("form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const trackingNumber = document.getElementById("tracking-number").value.trim();
+      const validCode = "TR599652932"; // your tracking code
 
-      if (trackingInput === "TR599652932") {
-        shipmentDetails.style.display = "block";
-        errorMessage.style.display = "none";
+      if (trackingNumber === validCode) {
+        document.getElementById("shipment-details").style.display = "block";
+        document.getElementById("error-message").style.display = "none";
       } else {
-        shipmentDetails.style.display = "none";
-        errorMessage.style.display = "block";
+        document.getElementById("shipment-details").style.display = "none";
+        document.getElementById("error-message").style.display = "block";
       }
-    }
+    });
   </script>
 </body>
 </html>
