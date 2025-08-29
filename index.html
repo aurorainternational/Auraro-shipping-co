@@ -3,205 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auraro International Shipping Co</title>
+  <title>Shipment Tracking - Auraro International Shipping</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f7fb;
-        margin: 0;
-        padding: 0;
-        color: #333;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
     }
-
-    h1, h2, h3 {
-        text-align: center;
-        color: #222;
+    header, footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
     }
-
-    .tracking-box {
-        width: 90%;
-        max-width: 600px;
-        margin: 20px auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        text-align: center;
+    main {
+      padding: 20px;
     }
-
-    input[type="text"] {
-        width: 70%;
-        padding: 10px;
-        margin-right: 10px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
+    #tracking-form {
+      text-align: center;
+      margin-bottom: 20px;
     }
-
-    button {
-        padding: 10px 15px;
-        border: none;
-        border-radius: 4px;
-        background-color: #0073e6;
-        color: #fff;
-        cursor: pointer;
+    #tracking-form input {
+      padding: 10px;
+      width: 250px;
     }
-
-    button:hover {
-        background-color: #005bb5;
+    #tracking-form button {
+      padding: 10px 20px;
+      background: #003366;
+      color: white;
+      border: none;
+      cursor: pointer;
     }
-
-    #shipmentDetails {
-        margin: 20px auto;
-        width: 90%;
-        max-width: 900px;
-        padding: 20px;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-        display: none;
+    #shipment-details {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
-    .status-badge {
-        display: inline-block;
-        padding: 6px 14px;
-        border-radius: 12px;
-        font-weight: bold;
-        color: #fff;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
     }
-
-    .status-badge.received {
-        background-color: #28a745;
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
     }
-
-    .status-badge.in-transit {
-        background-color: #ffc107;
-        color: #333;
-    }
-
-    .status-badge.pending {
-        background-color: #6c757d;
-    }
-
-    .tracking-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-        font-size: 14px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .tracking-table th, .tracking-table td {
-        padding: 12px;
-        border: 1px solid #ddd;
-        vertical-align: top;
-    }
-
-    .tracking-table th {
-        background-color: #0073e6;
-        color: #fff;
-        font-weight: bold;
-    }
-
-    .tracking-table tr:nth-child(even) {
-        background-color: #f2f6fc;
-    }
-
-    .tracking-table tr:hover {
-        background-color: #e1f0ff;
-    }
-
-    .proof-image {
-        display: block;
-        margin: 15px auto;
-        max-width: 400px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-
-    #errorMessage {
-        font-weight: bold;
-        color: red;
-        text-align: center;
-        margin-top: 15px;
+    th {
+      background: #003366;
+      color: white;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Auraro International Shipping</h1>
+  </header>
 
-  <h1>Auraro International Shipping Co</h1>
-  <h2>Track Your Shipment</h2>
+  <main>
+    <!-- Tracking Form -->
+    <section id="tracking-form">
+      <h2>Track Your Shipment</h2>
+      <form id="form">
+        <input type="text" id="tracking-number" placeholder="Enter Tracking Number" required>
+        <button type="submit">Track</button>
+      </form>
+      <p id="error-message" style="color: red; display: none;">Invalid tracking number. Please try again.</p>
+    </section>
 
-  <div class="tracking-box">
-    <input type="text" id="trackingInput" placeholder="Enter Tracking Code">
-    <button onclick="checkTracking()">Track</button>
-    <p id="errorMessage" style="display:none;">❌ Invalid Tracking Code. Please try again.</p>
-  </div>
+    <!-- Shipment Details (hidden until correct code is entered) -->
+    <section id="shipment-details" style="display: none;">
+      <h2>Shipment Details</h2>
 
-  <div id="shipmentDetails">
-    <h3>Shipment Details</h3>
-    <p><strong>Tracking Code:</strong> TR599652932</p>
-    <p><strong>Shipper:</strong> Robert Agent Wood, Florida (<a href="mailto:robertagentwood@gmail.com">robertagentwood@gmail.com</a>)</p>
-    <p><strong>Recipient:</strong> Paul Wood, 35916 E 231st St S, Porter, Oklahoma, 74454, USA</p>
-    <p><strong>Status:</strong> <span class="status-badge in-transit">🟡 In Transit – Item departed from Alabama</span></p>
-    <p><strong>Current Location:</strong> Oklahoma</p>
-    <p><strong>Expected Delivery Date:</strong> 22 July 2025 (End of Day)</p>
+      <!-- Shipment Status -->
+      <p><strong>Status:</strong> 🟡 In Transit</p>
+      <p><strong>Expected Delivery:</strong> 3rd September 2025 by end of the day</p>
 
-    <h3>Shipment History</h3>
-    <table class="tracking-table">
-      <tr>
-        <th>Date & Time</th>
-        <th>Event</th>
-      </tr>
-      <tr>
-        <td>June 25, 2025, 9:00 AM</td>
-        <td>Item received from shipper</td>
-      </tr>
-      <tr>
-        <td>June 25, 2025, 9:30 AM</td>
-        <td>Item departed from sorting facility in Florida</td>
-      </tr>
-      <tr>
-        <td>June 25, 2025, 10:30 AM</td>
-        <td>Item arrived at Jacksonville</td>
-      </tr>
-      <tr>
-        <td>June 25, 2025</td>
-        <td>Item departed from a sorting facility in Jacksonville</td>
-      </tr>
-      <tr>
-        <td>June 25, 2025, 12:00 PM</td>
-        <td>Item received from shipper</td>
-      </tr>
-      <tr>
-        <td>June 25, 2025, 1:30 PM</td>
-        <td>Item departed from sorting facility in Florida</td>
-      </tr>
-      <tr>
-        <td>July 1, 2025, 7:45 PM</td>
-        <td>Item departed from a sorting facility in Georgia</td>
-      </tr>
-      <tr>
-        <td>July 1, 2025, 7:45 PM</td>
-        <td>Item stopped at Alabama</td>
-      </tr>
-      <tr>
-        <td>July 21, 2025, 10:00 PM</td>
-        <td>Item departed from Alabama</td>
-      </tr>
-      <tr>
-        <td>July 22, 2025, 7:00 AM</td>
-        <td>Item arrived in Oklahoma</td>
-      </tr>
-    </table>
+      <!-- Tracking History -->
+      <h3>Tracking History</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date & Time</th>
+            <th>Location</th>
+            <th>Event</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>29th August 2025, 11:00 AM</td>
+            <td>Saint Petersburg, Russia</td>
+            <td>Item received from shipper</td>
+          </tr>
+        </tbody>
+      </table>
 
-    <img src="proof.jpg" alt="Proof of Package" class="proof-image">
-  </div>
+      <!-- Shipper and Receiver Info -->
+      <h3>Shipper Information</h3>
+      <p><strong>Name:</strong> Ron Delucca</p>
+      <p><strong>Location:</strong> Russia</p>
+      <p><strong>Email:</strong> deluccar1948@gmail.com</p>
+
+      <h3>Receiver Information</h3>
+      <p><strong>Name:</strong> Matthew Joseph Estilette</p>
+      <p><strong>Address:</strong> 1113 David St, New Iberia, LA 70560, USA</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Auraro International Shipping</p>
+  </footer>
 
   <script>
-    function checkTracking() {
-      const trackingInput = document.getElementById("trackingInput").value.trim();
-      const shipmentDetails = document.getElementById("shipmentDetails");
-      const errorMessage = document.getElementById("errorMessage");
+    // Tracking logic
+    document.getElementById("form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const trackingInput = document.getElementById("tracking-number").value.trim();
+      const shipmentDetails = document.getElementById("shipment-details");
+      const errorMessage = document.getElementById("error-message");
 
       if (trackingInput === "TR599652932") {
         shipmentDetails.style.display = "block";
@@ -210,7 +133,7 @@
         shipmentDetails.style.display = "none";
         errorMessage.style.display = "block";
       }
-    }
+    });
   </script>
 </body>
 </html>
