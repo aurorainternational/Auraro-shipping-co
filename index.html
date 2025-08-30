@@ -38,6 +38,25 @@
       color: red;
       display: none;
     }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background: #f0f0f0;
+    }
   </style>
 </head>
 <body>
@@ -56,13 +75,38 @@
     <p><strong>Expected Delivery:</strong> 2nd September 2025 (End of Day)</p>
 
     <h2>Tracking History</h2>
-    <ul>
-      <li><strong>29 Aug 2025, 11:10 AM:</strong> Item scanned – Saint Petersburg, Russia</li>
-      <li><strong>29 Aug 2025, 11:30 AM:</strong> Item departed from sorting facility – Saint Petersburg, Russia</li>
-      <li><strong>29 Aug 2025, 2:15 PM:</strong> Item arrived – Tallinn, Estonia</li>
-      <li><strong>29 Aug 2025, 2:30 PM:</strong> Item scanned – Tallinn, Estonia</li>
-      <li><strong>29 Aug 2025, 3:15 PM:</strong> Item departed – Tallinn, Estonia</li>
-    </ul>
+    <table>
+      <tr>
+        <th>Date & Time</th>
+        <th>Location</th>
+        <th>Event</th>
+      </tr>
+      <tr>
+        <td>29 Aug 2025, 11:10 AM</td>
+        <td>Saint Petersburg, Russia</td>
+        <td>✅ Item scanned</td>
+      </tr>
+      <tr>
+        <td>29 Aug 2025, 11:30 AM</td>
+        <td>Saint Petersburg, Russia</td>
+        <td>📦 Item departed from sorting facility</td>
+      </tr>
+      <tr>
+        <td>29 Aug 2025, 2:15 PM</td>
+        <td>Tallinn, Estonia</td>
+        <td>📍 Item arrived</td>
+      </tr>
+      <tr>
+        <td>29 Aug 2025, 2:30 PM</td>
+        <td>Tallinn, Estonia</td>
+        <td>✅ Item scanned</td>
+      </tr>
+      <tr>
+        <td>29 Aug 2025, 3:15 PM</td>
+        <td>Tallinn, Estonia</td>
+        <td>🚚 Item departed</td>
+      </tr>
+    </table>
 
     <h2>Shipper Information</h2>
     <p><strong>Name:</strong> Ron Delucca</p>
