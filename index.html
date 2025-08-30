@@ -3,153 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auraro International Shipping Co - Tracking</title>
+  <title>Shipment Tracking</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 20px;
-      background: #f4f6f9;
-      color: #333;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
     }
-
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
     h1 {
       text-align: center;
-      color: #003366;
+      color: #333;
     }
-
-    .tracking-box {
+    .tracking-form {
       text-align: center;
       margin-bottom: 20px;
     }
-
-    input[type="text"] {
-      padding: 8px;
+    .tracking-form input {
+      padding: 10px;
       width: 250px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 4px;
     }
-
-    button {
-      padding: 8px 16px;
-      background: #003366;
-      color: white;
+    .tracking-form button {
+      padding: 10px 20px;
+      margin-left: 10px;
       border: none;
-      border-radius: 5px;
+      background: #0077b6;
+      color: white;
+      border-radius: 4px;
       cursor: pointer;
     }
-
-    button:hover {
-      background: #0055aa;
-    }
-
-    .error {
-      color: red;
+    .tracking-result {
       display: none;
-      margin-top: 10px;
+      margin-top: 20px;
     }
-
-    #shipmentDetails {
-      display: none;
-      margin-top: 30px;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .current-location-box {
+      background: #f0f8ff;
+      border: 2px solid #0077b6;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      text-align: center;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
     }
-
-    /* Tracking history timeline */
-    .timeline {
-      list-style: none;
-      padding: 0;
+    .current-location-box h2 {
+      margin: 0;
+      color: #0077b6;
+    }
+    .current-location-box p {
+      margin: 5px 0;
+      font-size: 15px;
+    }
+    .tracking-history {
+      margin-top: 20px;
+    }
+    .history-entry {
       position: relative;
+      padding-left: 30px;
+      margin-bottom: 15px;
     }
-
-    .timeline::before {
-      content: '';
+    .history-entry::before {
+      content: "→";
       position: absolute;
-      left: 20px;
+      left: 0;
       top: 0;
-      bottom: 0;
-      width: 3px;
-      background: #003366;
-    }
-
-    .timeline li {
-      margin: 20px 0;
-      padding-left: 50px;
-      position: relative;
-    }
-
-    .timeline li::before {
-      content: '→';
-      position: absolute;
-      left: 10px;
-      top: 0;
-      font-size: 18px;
-      color: #003366;
+      color: #0077b6;
       font-weight: bold;
     }
-
     .info-box {
-      margin-top: 30px;
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fafafa;
     }
-
     .info-box h3 {
-      color: #003366;
+      margin-top: 0;
+      color: #0077b6;
     }
-
-    .info-box p {
-      margin: 5px 0;
-    }
-
   </style>
 </head>
 <body>
-  <h1>Auraro International Shipping Co</h1>
+  <div class="container">
+    <h1>Shipment Tracking</h1>
+    <div class="tracking-form">
+      <input type="text" id="trackingCode" placeholder="Enter Tracking Code">
+      <button onclick="trackShipment()">Track</button>
+    </div>
+    <div class="tracking-result" id="trackingResult">
+      
+      <!-- Current Location -->
+      <div class="current-location-box">
+        <h2>📍 Current Location</h2>
+        <p><strong>Berlin, Germany</strong></p>
+        <p>Status: 🟡 In Transit – Item departed from sorting facility</p>
+        <p><em>Last updated: 30 Aug 2025, 6:00 AM</em></p>
+      </div>
 
-  <div class="tracking-box">
-    <input type="text" id="trackingInput" placeholder="Enter Tracking Number">
-    <button onclick="checkTracking()">Track</button>
-    <p id="errorMessage" class="error">❌ Invalid Tracking Number</p>
-  </div>
+      <!-- Tracking History -->
+      <div class="tracking-history">
+        <h2>Tracking History</h2>
+        <div class="history-entry">29 Aug 2025, 6:30 PM – Riga, Latvia → Item arrived at Riga, Latvia</div>
+        <div class="history-entry">29 Aug 2025, 6:40 PM – Riga, Latvia → Item scanned at Riga facility</div>
+        <div class="history-entry">29 Aug 2025, 6:55 PM – Riga, Latvia → Item departed from a sorting facility in Riga, Latvia</div>
+        <div class="history-entry">29 Aug 2025, 9:00 PM – Vilnius, Lithuania → Item arrived at Vilnius, Lithuania</div>
+        <div class="history-entry">29 Aug 2025, 9:15 PM – Vilnius, Lithuania → Item scanned at Vilnius facility</div>
+        <div class="history-entry">29 Aug 2025, 10:00 PM – Vilnius, Lithuania → Item departed from a sorting facility in Vilnius, Lithuania</div>
+        <div class="history-entry">30 Aug 2025, 1:00 AM – Warsaw, Poland → Item arrived at Warsaw, Poland</div>
+        <div class="history-entry">30 Aug 2025, 1:15 AM – Warsaw, Poland → Item scanned at Warsaw facility</div>
+        <div class="history-entry">30 Aug 2025, 1:30 AM – Warsaw, Poland → Item departed from a sorting facility in Warsaw, Poland</div>
+        <div class="history-entry">30 Aug 2025, 5:10 AM – Berlin, Germany → Item arrived at Berlin, Germany</div>
+        <div class="history-entry">30 Aug 2025, 5:20 AM – Berlin, Germany → Item scanned at Berlin facility</div>
+        <div class="history-entry">30 Aug 2025, 6:00 AM – Berlin, Germany → Item departed from a sorting facility in Berlin, Germany</div>
+      </div>
 
-  <div id="shipmentDetails">
-    <h2>📦 Shipment Tracking History</h2>
-    <ul class="timeline">
-      <li><strong>29 Aug 2025, 11:10 AM</strong> – Item scanned – Saint Petersburg, Russia</li>
-      <li><strong>29 Aug 2025, 11:30 AM</strong> – Item departed from sorting facility – Saint Petersburg, Russia</li>
-      <li><strong>29 Aug 2025, 2:15 PM</strong> – Item arrived – Tallinn, Estonia</li>
-      <li><strong>29 Aug 2025, 2:30 PM</strong> – Item scanned – Tallinn, Estonia</li>
-      <li><strong>29 Aug 2025, 3:15 PM</strong> – Item departed from Tallinn, Estonia</li>
-    </ul>
-
-    <div class="info-box">
-      <h3>Shipper Information</h3>
-      <p><strong>Name:</strong> Ron Delucca</p>
-      <p><strong>Location:</strong> Russia</p>
-      <p><strong>Email:</strong> deluccar1948@gmail.com</p>
-
-      <h3>Receiver Information</h3>
-      <p><strong>Name:</strong> Matthew Joseph Estilette</p>
-      <p><strong>Address:</strong> 1113 David St, New Iberia, LA 70560, USA</p>
-
-      <h3>Expected Delivery</h3>
-      <p>📅 2nd September 2025 by end of the day</p>
+      <!-- Shipment Info -->
+      <div class="info-box">
+        <h3>Shipper Information</h3>
+        <p><strong>Name:</strong> Ron Delucca</p>
+        <p><strong>Location:</strong> Russia</p>
+        <p><strong>Email:</strong> deluccar1948@gmail.com</p>
+      </div>
+      <div class="info-box">
+        <h3>Receiver Information</h3>
+        <p><strong>Name:</strong> Matthew Joseph Estilette</p>
+        <p><strong>Location:</strong> USA</p>
+        <p><strong>Address:</strong> 1113 David St, New Iberia, LA 70560, USA</p>
+      </div>
+      <div class="info-box">
+        <h3>Delivery Information</h3>
+        <p><strong>Expected Delivery:</strong> 2nd September 2025, by end of the day</p>
+      </div>
     </div>
   </div>
 
   <script>
-    function checkTracking() {
-      const trackingInput = document.getElementById("trackingInput").value.trim();
-      const shipmentDetails = document.getElementById("shipmentDetails");
-      const errorMessage = document.getElementById("errorMessage");
+    function trackShipment() {
+      const code = document.getElementById("trackingCode").value.trim();
+      const result = document.getElementById("trackingResult");
 
-      if (trackingInput === "TR599652932") {
-        shipmentDetails.style.display = "block";
-        errorMessage.style.display = "none";
+      if (code === "TR599652932") {
+        result.style.display = "block";
       } else {
-        shipmentDetails.style.display = "none";
-        errorMessage.style.display = "block";
+        alert("Invalid Tracking Code");
       }
     }
   </script>
