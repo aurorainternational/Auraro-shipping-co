@@ -3,120 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auraro International Shipping Co</title>
+  <title>Auraro International Shipping Co - Tracking</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
-      line-height: 1.6;
+      background: #f4f6f9;
+      color: #333;
     }
 
     h1 {
-      color: darkblue;
+      text-align: center;
+      color: #003366;
+    }
+
+    .tracking-box {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
 
     button {
-      padding: 8px 12px;
-      background: darkblue;
+      padding: 8px 16px;
+      background: #003366;
       color: white;
       border: none;
+      border-radius: 5px;
       cursor: pointer;
     }
 
     button:hover {
-      background: navy;
+      background: #0055aa;
     }
 
-    #shipmentDetails {
-      margin-top: 20px;
-      padding: 15px;
-      border: 1px solid #ccc;
-      background: #f9f9f9;
-    }
-
-    #errorMessage {
+    .error {
       color: red;
       display: none;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
       margin-top: 10px;
     }
 
-    table, th, td {
-      border: 1px solid #ccc;
+    #shipmentDetails {
+      display: none;
+      margin-top: 30px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    th, td {
-      padding: 8px;
-      text-align: left;
+    /* Tracking history timeline */
+    .timeline {
+      list-style: none;
+      padding: 0;
+      position: relative;
     }
 
-    th {
-      background: #f0f0f0;
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #003366;
     }
+
+    .timeline li {
+      margin: 20px 0;
+      padding-left: 50px;
+      position: relative;
+    }
+
+    .timeline li::before {
+      content: '→';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      font-size: 18px;
+      color: #003366;
+      font-weight: bold;
+    }
+
+    .info-box {
+      margin-top: 30px;
+    }
+
+    .info-box h3 {
+      color: #003366;
+    }
+
+    .info-box p {
+      margin: 5px 0;
+    }
+
   </style>
 </head>
 <body>
   <h1>Auraro International Shipping Co</h1>
-  <p>Enter your tracking number below:</p>
 
-  <input type="text" id="trackingInput" placeholder="Enter Tracking Number">
-  <button onclick="checkTracking()">Track</button>
+  <div class="tracking-box">
+    <input type="text" id="trackingInput" placeholder="Enter Tracking Number">
+    <button onclick="checkTracking()">Track</button>
+    <p id="errorMessage" class="error">❌ Invalid Tracking Number</p>
+  </div>
 
-  <p id="errorMessage">❌ Invalid tracking number. Please try again.</p>
+  <div id="shipmentDetails">
+    <h2>📦 Shipment Tracking History</h2>
+    <ul class="timeline">
+      <li><strong>29 Aug 2025, 11:10 AM</strong> – Item scanned – Saint Petersburg, Russia</li>
+      <li><strong>29 Aug 2025, 11:30 AM</strong> – Item departed from sorting facility – Saint Petersburg, Russia</li>
+      <li><strong>29 Aug 2025, 2:15 PM</strong> – Item arrived – Tallinn, Estonia</li>
+      <li><strong>29 Aug 2025, 2:30 PM</strong> – Item scanned – Tallinn, Estonia</li>
+      <li><strong>29 Aug 2025, 3:15 PM</strong> – Item departed from Tallinn, Estonia</li>
+    </ul>
 
-  <div id="shipmentDetails" style="display: none;">
+    <div class="info-box">
+      <h3>Shipper Information</h3>
+      <p><strong>Name:</strong> Ron Delucca</p>
+      <p><strong>Location:</strong> Russia</p>
+      <p><strong>Email:</strong> deluccar1948@gmail.com</p>
 
-    <h2>Shipment Status</h2>
-    <p><strong>Status:</strong> 🟡 In Transit</p>
-    <p><strong>Expected Delivery:</strong> 2nd September 2025 (End of Day)</p>
+      <h3>Receiver Information</h3>
+      <p><strong>Name:</strong> Matthew Joseph Estilette</p>
+      <p><strong>Address:</strong> 1113 David St, New Iberia, LA 70560, USA</p>
 
-    <h2>Tracking History</h2>
-    <table>
-      <tr>
-        <th>Date & Time</th>
-        <th>Location</th>
-        <th>Event</th>
-      </tr>
-      <tr>
-        <td>29 Aug 2025, 11:10 AM</td>
-        <td>Saint Petersburg, Russia</td>
-        <td>✅ Item scanned</td>
-      </tr>
-      <tr>
-        <td>29 Aug 2025, 11:30 AM</td>
-        <td>Saint Petersburg, Russia</td>
-        <td>📦 Item departed from sorting facility</td>
-      </tr>
-      <tr>
-        <td>29 Aug 2025, 2:15 PM</td>
-        <td>Tallinn, Estonia</td>
-        <td>📍 Item arrived</td>
-      </tr>
-      <tr>
-        <td>29 Aug 2025, 2:30 PM</td>
-        <td>Tallinn, Estonia</td>
-        <td>✅ Item scanned</td>
-      </tr>
-      <tr>
-        <td>29 Aug 2025, 3:15 PM</td>
-        <td>Tallinn, Estonia</td>
-        <td>🚚 Item departed</td>
-      </tr>
-    </table>
-
-    <h2>Shipper Information</h2>
-    <p><strong>Name:</strong> Ron Delucca</p>
-    <p><strong>Location:</strong> Russia</p>
-    <p><strong>Email:</strong> deluccar1948@gmail.com</p>
-
-    <h2>Receiver Information</h2>
-    <p><strong>Name:</strong> Matthew Joseph Estilette</p>
-    <p><strong>Location:</strong> USA</p>
-    <p><strong>Address:</strong> 1113 David St, New Iberia, LA 70560, USA</p>
+      <h3>Expected Delivery</h3>
+      <p>📅 2nd September 2025 by end of the day</p>
+    </div>
   </div>
 
   <script>
