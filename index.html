@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shipment Tracking - TR599652932</title>
+  <title>Auraro International Shipping</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,162 +12,100 @@
       padding: 0;
     }
     header {
-      background: #004080;
-      color: #fff;
+      background: #003366;
+      color: white;
       text-align: center;
-      padding: 20px;
+      padding: 20px 0;
+    }
+    header h1 {
+      margin: 0;
     }
     .container {
       max-width: 900px;
       margin: 20px auto;
+      background: white;
       padding: 20px;
-      background: #fff;
-      border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .tracking-input {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .tracking-input input {
-      padding: 10px;
-      width: 250px;
-    }
-    .tracking-input button {
-      padding: 10px 15px;
-      background: #004080;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-    .hidden {
-      display: none;
+      border-radius: 8px;
     }
     h2 {
-      color: #004080;
+      color: #003366;
+      border-bottom: 2px solid #003366;
+      padding-bottom: 5px;
     }
-    /* Timeline style */
-    .timeline {
-      position: relative;
-      margin: 20px 0;
-      padding: 0;
+    .info {
+      margin-bottom: 20px;
+    }
+    .info p {
+      margin: 6px 0;
+    }
+    .status {
+      font-size: 18px;
+      font-weight: bold;
+      color: #cc9900;
+    }
+    ul {
       list-style: none;
+      padding: 0;
     }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 20px;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: #004080;
-    }
-    .timeline li {
-      position: relative;
-      margin: 20px 0;
-      padding-left: 50px;
-    }
-    .timeline li::before {
-      content: '➔';
-      position: absolute;
-      left: 10px;
-      top: 0;
-      font-size: 20px;
-      color: #004080;
-    }
-    .shipment-info {
-      margin-top: 30px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-    table, th, td {
-      border: 1px solid #ccc;
-    }
-    th, td {
+    ul li {
+      margin: 10px 0;
       padding: 10px;
-      text-align: left;
+      background: #f9f9f9;
+      border-left: 4px solid #003366;
     }
-    th {
-      background: #004080;
-      color: #fff;
+    ul li::before {
+      content: "→ ";
+      color: #003366;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 15px;
+      background: #003366;
+      color: white;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Shipment Tracking</h1>
-    <p>Enter your tracking code to view shipment details</p>
+    <h1>Auraro International Shipping</h1>
+    <p>Reliable • Fast • Secure</p>
   </header>
 
   <div class="container">
-    <div class="tracking-input">
-      <input type="text" id="trackingCode" placeholder="Enter Tracking Code">
-      <button onclick="checkTracking()">Track</button>
+    <h2>Shipper Information</h2>
+    <div class="info">
+      <p><strong>Name:</strong> Ron Delucca</p>
+      <p><strong>Location:</strong> Russia</p>
+      <p><strong>Email:</strong> deluccar1948@gmail.com</p>
     </div>
 
-    <div id="trackingDetails" class="hidden">
-      <h2>Tracking History</h2>
-      <ul class="timeline">
-        <li><strong>29 Aug 2025, 6:30 PM – Riga, Latvia:</strong> Item arrived at Riga, Latvia</li>
-        <li><strong>29 Aug 2025, 6:40 PM – Riga, Latvia:</strong> Item scanned at Riga facility</li>
-        <li><strong>29 Aug 2025, 6:55 PM – Riga, Latvia:</strong> Item departed from a sorting facility in Riga, Latvia</li>
-        <li><strong>29 Aug 2025, 9:00 PM – Vilnius, Lithuania:</strong> Item arrived at Vilnius, Lithuania</li>
-        <li><strong>29 Aug 2025, 9:15 PM – Vilnius, Lithuania:</strong> Item scanned at Vilnius facility</li>
-        <li><strong>29 Aug 2025, 10:00 PM – Vilnius, Lithuania:</strong> Item departed from a sorting facility in Vilnius, Lithuania</li>
-        <li><strong>30 Aug 2025, 1:00 AM – Warsaw, Poland:</strong> Item arrived at Warsaw, Poland</li>
-        <li><strong>30 Aug 2025, 1:15 AM – Warsaw, Poland:</strong> Item scanned at Warsaw facility</li>
-        <li><strong>30 Aug 2025, 1:30 AM – Warsaw, Poland:</strong> Item departed from a sorting facility in Warsaw, Poland</li>
-        <li><strong>30 Aug 2025, 5:10 AM – Berlin, Germany:</strong> Item arrived at Berlin, Germany</li>
-        <li><strong>30 Aug 2025, 5:20 AM – Berlin, Germany:</strong> Item scanned at Berlin facility</li>
-        <li><strong>30 Aug 2025, 6:00 AM – Berlin, Germany:</strong> Item departed from a sorting facility in Berlin, Germany</li>
-        <li><strong>30 Aug 2025, 8:15 AM – Paris, France:</strong> Item arrived at Paris, France</li>
-        <li><strong>30 Aug 2025, 8:25 AM – Paris, France:</strong> Item scanned at Paris facility</li>
-        <li><strong>30 Aug 2025, 8:40 AM – Paris, France:</strong> Item departed from a sorting facility in Paris, France</li>
-        <li><strong>30 Aug 2025, 11:15 AM – London, UK:</strong> Item arrived at London, United Kingdom</li>
-        <li><strong>30 Aug 2025, 11:30 AM – London, UK:</strong> Item scanned at London facility</li>
-        <li><strong>30 Aug 2025, 11:45 AM – London, UK:</strong> Item departed from a sorting facility in London, United Kingdom</li>
-        <li><strong>30 Aug 2025, 3:00 PM – Dublin, Ireland:</strong> Item arrived at Dublin, Ireland</li>
-        <li><strong>30 Aug 2025, 3:10 PM – Dublin, Ireland:</strong> Item scanned at Dublin facility</li>
-        <li><strong>30 Aug 2025, 3:20 PM – Dublin, Ireland:</strong> Item departed from a sorting facility in Dublin, Ireland</li>
-        <li><strong>30 Aug 2025, 6:00 PM – Atlantic Ocean:</strong> Item arrived at Atlantic Ocean checkpoint</li>
-        <li><strong>30 Aug 2025, 6:10 PM – Atlantic Ocean:</strong> Item scanned at Atlantic Ocean checkpoint</li>
-        <li><strong>30 Aug 2025, 6:20 PM – Atlantic Ocean:</strong> Item departed from a sorting facility in Atlantic Ocean</li>
-      </ul>
-
-      <div class="shipment-info">
-        <h2>Shipment Information</h2>
-        <table>
-          <tr>
-            <th>Shipper</th>
-            <td>Ron Delucca, Russia, Email: deluccar1948@gmail.com</td>
-          </tr>
-          <tr>
-            <th>Receiver</th>
-            <td>Matthew Joseph Estilette, 1113 David St, New Iberia, LA 70560, USA</td>
-          </tr>
-          <tr>
-            <th>Expected Delivery</th>
-            <td>2nd September 2025 (by end of day)</td>
-          </tr>
-        </table>
-      </div>
+    <h2>Recipient Information</h2>
+    <div class="info">
+      <p><strong>Name:</strong> Matthew Joseph Estilette</p>
+      <p><strong>Location:</strong> USA</p>
+      <p><strong>Address:</strong> 1113 David St, New Iberia, LA 70560, USA</p>
     </div>
+
+    <h2>Shipment Status</h2>
+    <p class="status">🟡 In Transit – Item currently in London, United Kingdom</p>
+
+    <h2>Tracking History</h2>
+    <ul>
+      <li>30th August 2025, 8:15 AM – Item arrived at Paris, France</li>
+      <li>30th August 2025, 8:25 AM – Item scanned</li>
+      <li>30th August 2025, 8:40 AM – Item departed from a sorting facility in Paris, France</li>
+      <li>30th August 2025, 11:15 AM – Item arrived at London, United Kingdom</li>
+    </ul>
+
+    <h2>Expected Delivery Date</h2>
+    <p>📅 Tuesday</p>
   </div>
 
-  <script>
-    function checkTracking() {
-      const input = document.getElementById("trackingCode").value.trim();
-      const details = document.getElementById("trackingDetails");
-      if (input === "TR599652932") {
-        details.classList.remove("hidden");
-      } else {
-        alert("Invalid tracking code. Please try again.");
-        details.classList.add("hidden");
-      }
-    }
-  </script>
+  <footer>
+    <p>&copy; 2025 Auraro International Shipping. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
