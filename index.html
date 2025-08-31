@@ -3,147 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shipment Tracking - TR599652932</title>
+  <title>Shipment Tracking - American Winners Shipping Co</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #003366;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .tracking-box {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    input[type="text"] {
-      padding: 10px;
-      width: 250px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      padding: 10px 20px;
-      border: none;
-      background: #003366;
-      color: #fff;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    button:hover {
-      background: #0055aa;
-    }
-    .hidden {
-      display: none;
-    }
-    h2 {
-      border-bottom: 2px solid #003366;
-      padding-bottom: 5px;
-      color: #003366;
-    }
-    .info p {
-      margin: 5px 0;
-    }
-    .history {
-      margin-top: 20px;
-    }
-    .history ul {
-      list-style: none;
-      padding: 0;
-    }
-    .history li {
-      margin: 10px 0;
-      padding: 10px;
-      background: #f0f8ff;
-      border-left: 4px solid #003366;
-    }
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+    header { background: #003366; color: white; padding: 15px; text-align: center; }
+    main { max-width: 900px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; }
+    h2 { color: #003366; }
+    .tracking-form { margin-bottom: 20px; }
+    input[type="text"] { padding: 8px; width: 250px; }
+    button { padding: 8px 15px; background: #003366; color: white; border: none; cursor: pointer; }
+    button:hover { background: #0055aa; }
+    .shipment-details { display: none; margin-top: 20px; }
+    .section { margin-bottom: 20px; }
+    .history-entry { padding: 6px; border-bottom: 1px solid #ddd; }
+    .label { font-weight: bold; }
   </style>
-</head>
-<body>
-  <header>
-    <h1>Shipment Tracking</h1>
-  </header>
-
-  <div class="container">
-    <div class="tracking-box">
-      <input type="text" id="trackingCode" placeholder="Enter Tracking Code">
-      <button onclick="checkTracking()">Track</button>
-    </div>
-
-    <div id="shipmentDetails" class="hidden">
-      <h2>Shipment Information</h2>
-      <p><strong>Tracking Code:</strong> TR599652932</p>
-      <p><strong>Status:</strong> 🟡 In Transit – Item departed Atlantic Ocean</p>
-      <p><strong>Expected Delivery:</strong> 2nd September 2025, End of Day</p>
-
-      <h2>Shipper Information</h2>
-      <div class="info">
-        <p><strong>Name:</strong> Ron Delucca</p>
-        <p><strong>Location:</strong> Russia</p>
-        <p><strong>Email:</strong> deluccar1948@gmail.com</p>
-      </div>
-
-      <h2>Receiver Information</h2>
-      <div class="info">
-        <p><strong>Name:</strong> Matthew Joseph Estilette</p>
-        <p><strong>Location:</strong> USA</p>
-        <p><strong>Address:</strong> 1113 David St, New Iberia, LA 70560, USA</p>
-      </div>
-
-      <h2>Shipment History</h2>
-      <div class="history">
-        <ul>
-          <li>29 Aug 2025, 6:30 PM – Item arrived at Riga, Latvia</li>
-          <li>29 Aug 2025, 6:40 PM – Item scanned at Riga, Latvia</li>
-          <li>29 Aug 2025, 6:55 PM – Item departed from sorting facility in Riga, Latvia</li>
-          <li>29 Aug 2025, 9:00 PM – Item arrived at Vilnius, Lithuania</li>
-          <li>29 Aug 2025, 9:15 PM – Item scanned at Vilnius, Lithuania</li>
-          <li>29 Aug 2025, 10:00 PM – Item departed from sorting facility in Vilnius, Lithuania</li>
-          <li>30 Aug 2025, 1:00 AM – Item arrived at Warsaw, Poland</li>
-          <li>30 Aug 2025, 1:15 AM – Item scanned at Warsaw, Poland</li>
-          <li>30 Aug 2025, 1:30 AM – Item departed from sorting facility in Warsaw, Poland</li>
-          <li>30 Aug 2025, 5:10 AM – Item arrived at Berlin, Germany</li>
-          <li>30 Aug 2025, 5:20 AM – Item scanned at Berlin, Germany</li>
-          <li>30 Aug 2025, 6:00 AM – Item departed from sorting facility in Berlin, Germany</li>
-          <li>30 Aug 2025, 8:15 AM – Item arrived at Paris, France</li>
-          <li>30 Aug 2025, 8:25 AM – Item scanned at Paris, France</li>
-          <li>30 Aug 2025, 8:40 AM – Item departed from sorting facility in Paris, France</li>
-          <li>30 Aug 2025, 11:15 AM – Item arrived at London, United Kingdom</li>
-          <li>30 Aug 2025, 11:30 AM – Item scanned at London, UK</li>
-          <li>30 Aug 2025, 11:45 AM – Item departed from sorting facility in London, UK</li>
-          <li>30 Aug 2025, 3:00 PM – Item arrived at Dublin, Ireland</li>
-          <li>30 Aug 2025, 3:10 PM – Item scanned at Dublin, Ireland</li>
-          <li>30 Aug 2025, 3:20 PM – Item departed from sorting facility in Dublin, Ireland</li>
-          <li>30 Aug 2025, 6:00 PM – Item arrived at Atlantic Ocean</li>
-          <li>30 Aug 2025, 6:10 PM – Item scanned at Atlantic Ocean</li>
-          <li>30 Aug 2025, 6:20 PM – Item departed from sorting facility in Atlantic Ocean</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
   <script>
-    function checkTracking() {
+    function trackShipment() {
       const code = document.getElementById("trackingCode").value.trim();
-      if (code === "TR599652932") {
-        document.getElementById("shipmentDetails").classList.remove("hidden");
+      const details = document.getElementById("shipmentDetails");
+      if (code === "539667479") {
+        details.style.display = "block";
       } else {
-        alert("Invalid Tracking Code. Please try again.");
+        alert("Invalid tracking code. Please try again.");
+        details.style.display = "none";
       }
     }
   </script>
+</head>
+<body>
+  <header>
+    <h1>American Winners Shipping Co</h1>
+    <p>Track Your Shipment</p>
+  </header>
+  <main>
+    <div class="tracking-form">
+      <input type="text" id="trackingCode" placeholder="Enter Tracking Code">
+      <button onclick="trackShipment()">Track</button>
+    </div>
+
+    <div id="shipmentDetails" class="shipment-details">
+      <div class="section">
+        <h2>Shipper Information</h2>
+        <p><span class="label">Name:</span> Ron Delucca</p>
+        <p><span class="label">Location:</span> Russia</p>
+        <p><span class="label">Email:</span> deluccar1948@gmail.com</p>
+      </div>
+
+      <div class="section">
+        <h2>Receiver Information</h2>
+        <p><span class="label">Name:</span> Matthew Joseph Estilette</p>
+        <p><span class="label">Location:</span> USA</p>
+        <p><span class="label">Address:</span> 1113 David St, New Iberia, LA 70560, USA</p>
+      </div>
+
+      <div class="section">
+        <h2>Shipment Tracking History</h2>
+        
+        <div class="history-entry">31st August 2025, 1:30 AM – Halifax, Nova Scotia, Canada → Item arrived at Halifax, Canada</div>
+        <div class="history-entry">31st August 2025, 1:40 AM – Halifax, Nova Scotia, Canada → Item scanned at Halifax facility</div>
+        <div class="history-entry">31st August 2025, 1:55 AM – Halifax, Nova Scotia, Canada → Item departed from a sorting facility in Halifax, Canada</div>
+        <div class="history-entry">31st August 2025, 3:30 AM – Boston, Massachusetts, USA → Item arrived at Boston, USA</div>
+        <div class="history-entry">31st August 2025, 3:40 AM – Boston, Massachusetts, USA → Item scanned at Boston facility</div>
+        <div class="history-entry">31st August 2025, 3:55 AM – Boston, Massachusetts, USA → Item departed from a sorting facility in Boston, USA</div>
+        <div class="history-entry">31st August 2025, 5:00 AM – New York City, New York, USA → Item arrived at New York, USA</div>
+        <div class="history-entry">31st August 2025, 5:10 AM – New York City, New York, USA → Item scanned at New York facility</div>
+        <div class="history-entry">31st August 2025, 5:25 AM – New York City, New York, USA → Item departed from a sorting facility in New York, USA</div>
+        <div class="history-entry">31st August 2025, 6:20 AM – Philadelphia, Pennsylvania, USA → Item arrived at Philadelphia, USA</div>
+        <div class="history-entry">31st August 2025, 6:30 AM – Philadelphia, Pennsylvania, USA → Item scanned at Philadelphia facility</div>
+        <div class="history-entry">31st August 2025, 6:45 AM – Philadelphia, Pennsylvania, USA → Item departed from a sorting facility in Philadelphia, USA</div>
+        <div class="history-entry">31st August 2025, 7:45 AM – Washington D.C., USA → Item arrived at Washington, D.C.</div>
+
+      </div>
+    </div>
+  </main>
 </body>
 </html>
