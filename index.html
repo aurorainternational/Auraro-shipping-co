@@ -3,99 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>American Winners Shipping Co - Tracking</title>
+  <title>Shipment Tracking - TR599652932</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
-    header { background: #003366; color: white; padding: 20px; text-align: center; }
-    h1 { margin: 0; }
-    .container { max-width: 900px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .tracking-form { text-align: center; margin-bottom: 20px; }
-    .tracking-form input { padding: 10px; width: 250px; }
-    .tracking-form button { padding: 10px 15px; background: #003366; color: white; border: none; cursor: pointer; }
-    .details { display: none; margin-top: 20px; }
-    .section { margin-bottom: 20px; }
-    .section h2 { border-bottom: 2px solid #003366; padding-bottom: 5px; color: #003366; }
-    ul { list-style: none; padding: 0; }
-    ul li { margin: 10px 0; padding: 10px; background: #f9f9f9; border-left: 4px solid #003366; }
-    .arrow { color: #003366; font-weight: bold; margin: 0 5px; }
-    footer { text-align: center; padding: 15px; background: #003366; color: white; margin-top: 30px; }
-    .proof { text-align: center; margin-top: 20px; }
-    .proof img { max-width: 300px; border: 2px solid #ccc; border-radius: 5px; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .tracking-box {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #003366;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background: #0055aa;
+    }
+    .hidden {
+      display: none;
+    }
+    h2 {
+      border-bottom: 2px solid #003366;
+      padding-bottom: 5px;
+      color: #003366;
+    }
+    .info p {
+      margin: 5px 0;
+    }
+    .history {
+      margin-top: 20px;
+    }
+    .history ul {
+      list-style: none;
+      padding: 0;
+    }
+    .history li {
+      margin: 10px 0;
+      padding: 10px;
+      background: #f0f8ff;
+      border-left: 4px solid #003366;
+    }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>American Winners Shipping Co</h1>
-    <p>Shipment Tracking System</p>
+    <h1>Shipment Tracking</h1>
   </header>
 
   <div class="container">
-    <div class="tracking-form">
+    <div class="tracking-box">
       <input type="text" id="trackingCode" placeholder="Enter Tracking Code">
-      <button onclick="checkCode()">Track</button>
+      <button onclick="checkTracking()">Track</button>
     </div>
 
-    <div class="details" id="shipmentDetails">
-      <div class="section">
-        <h2>Shipment Information</h2>
-        <p><strong>Tracking Code:</strong> TR599652932</p>
-        <p><strong>Shipper:</strong> Robert Agent Wood, Florida (<a href="mailto:robertagentwood@gmail.com">robertagentwood@gmail.com</a>)</p>
-        <p><strong>Recipient:</strong> Paul Wood, 35916 E 231st St S, Porter, Oklahoma, 74454, USA</p>
-        <p><strong>Expected Delivery Date:</strong> Tuesday</p>
+    <div id="shipmentDetails" class="hidden">
+      <h2>Shipment Information</h2>
+      <p><strong>Tracking Code:</strong> TR599652932</p>
+      <p><strong>Status:</strong> 🟡 In Transit – Item departed Atlantic Ocean</p>
+      <p><strong>Expected Delivery:</strong> 2nd September 2025, End of Day</p>
+
+      <h2>Shipper Information</h2>
+      <div class="info">
+        <p><strong>Name:</strong> Ron Delucca</p>
+        <p><strong>Location:</strong> Russia</p>
+        <p><strong>Email:</strong> deluccar1948@gmail.com</p>
       </div>
 
-      <div class="section">
-        <h2>Tracking History</h2>
+      <h2>Receiver Information</h2>
+      <div class="info">
+        <p><strong>Name:</strong> Matthew Joseph Estilette</p>
+        <p><strong>Location:</strong> USA</p>
+        <p><strong>Address:</strong> 1113 David St, New Iberia, LA 70560, USA</p>
+      </div>
+
+      <h2>Shipment History</h2>
+      <div class="history">
         <ul>
-          <li>29 Aug 2025, 6:30 PM → Item arrived at Riga, Latvia</li>
-          <li>29 Aug 2025, 6:40 PM → Item scanned at Riga, Latvia</li>
-          <li>29 Aug 2025, 6:55 PM → Item departed from sorting facility in Riga, Latvia</li>
-          <li>29 Aug 2025, 9:00 PM → Item arrived at Vilnius, Lithuania</li>
-          <li>29 Aug 2025, 9:15 PM → Item scanned at Vilnius, Lithuania</li>
-          <li>29 Aug 2025, 10:00 PM → Item departed from sorting facility in Vilnius</li>
-          <li>30 Aug 2025, 1:00 AM → Item arrived at Warsaw, Poland</li>
-          <li>30 Aug 2025, 1:15 AM → Item scanned at Warsaw, Poland</li>
-          <li>30 Aug 2025, 1:30 AM → Item departed from sorting facility in Warsaw, Poland</li>
-          <li>30 Aug 2025, 5:10 AM → Item arrived at Berlin, Germany</li>
-          <li>30 Aug 2025, 5:20 AM → Item scanned at Berlin, Germany</li>
-          <li>30 Aug 2025, 6:00 AM → Item departed from sorting facility in Berlin, Germany</li>
-          <li>30 Aug 2025, 8:15 AM → Item arrived at Paris, France</li>
-          <li>30 Aug 2025, 8:25 AM → Item scanned at Paris, France</li>
-          <li>30 Aug 2025, 8:40 AM → Item departed from sorting facility in Paris, France</li>
-          <li>30 Aug 2025, 11:15 AM → Item arrived at London, United Kingdom</li>
-          <li>30 Aug 2025, 11:30 AM → Item scanned at London, United Kingdom</li>
-          <li>30 Aug 2025, 11:45 AM → Item departed from sorting facility in London, United Kingdom</li>
-          <li>30 Aug 2025, 3:00 PM → Item arrived at Dublin, Ireland</li>
-          <li>30 Aug 2025, 3:10 PM → Item scanned at Dublin, Ireland</li>
-          <li>30 Aug 2025, 3:20 PM → Item departed from sorting facility in Dublin</li>
-          <li>30 Aug 2025, 6:00 PM → Item arrived at Atlantic Ocean</li>
-          <li>30 Aug 2025, 6:10 PM → Item scanned at Atlantic Ocean</li>
-          <li>30 Aug 2025, 6:20 PM → Item departed from sorting facility in Atlantic Ocean</li>
+          <li>29 Aug 2025, 6:30 PM – Item arrived at Riga, Latvia</li>
+          <li>29 Aug 2025, 6:40 PM – Item scanned at Riga, Latvia</li>
+          <li>29 Aug 2025, 6:55 PM – Item departed from sorting facility in Riga, Latvia</li>
+          <li>29 Aug 2025, 9:00 PM – Item arrived at Vilnius, Lithuania</li>
+          <li>29 Aug 2025, 9:15 PM – Item scanned at Vilnius, Lithuania</li>
+          <li>29 Aug 2025, 10:00 PM – Item departed from sorting facility in Vilnius, Lithuania</li>
+          <li>30 Aug 2025, 1:00 AM – Item arrived at Warsaw, Poland</li>
+          <li>30 Aug 2025, 1:15 AM – Item scanned at Warsaw, Poland</li>
+          <li>30 Aug 2025, 1:30 AM – Item departed from sorting facility in Warsaw, Poland</li>
+          <li>30 Aug 2025, 5:10 AM – Item arrived at Berlin, Germany</li>
+          <li>30 Aug 2025, 5:20 AM – Item scanned at Berlin, Germany</li>
+          <li>30 Aug 2025, 6:00 AM – Item departed from sorting facility in Berlin, Germany</li>
+          <li>30 Aug 2025, 8:15 AM – Item arrived at Paris, France</li>
+          <li>30 Aug 2025, 8:25 AM – Item scanned at Paris, France</li>
+          <li>30 Aug 2025, 8:40 AM – Item departed from sorting facility in Paris, France</li>
+          <li>30 Aug 2025, 11:15 AM – Item arrived at London, United Kingdom</li>
+          <li>30 Aug 2025, 11:30 AM – Item scanned at London, UK</li>
+          <li>30 Aug 2025, 11:45 AM – Item departed from sorting facility in London, UK</li>
+          <li>30 Aug 2025, 3:00 PM – Item arrived at Dublin, Ireland</li>
+          <li>30 Aug 2025, 3:10 PM – Item scanned at Dublin, Ireland</li>
+          <li>30 Aug 2025, 3:20 PM – Item departed from sorting facility in Dublin, Ireland</li>
+          <li>30 Aug 2025, 6:00 PM – Item arrived at Atlantic Ocean</li>
+          <li>30 Aug 2025, 6:10 PM – Item scanned at Atlantic Ocean</li>
+          <li>30 Aug 2025, 6:20 PM – Item departed from sorting facility in Atlantic Ocean</li>
         </ul>
-      </div>
-
-      <div class="proof">
-        <h2>Proof of Package</h2>
-        <img src="proof.jpg" alt="Proof of Package">
       </div>
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2025 American Winners Shipping Co. All Rights Reserved.</p>
-  </footer>
-
   <script>
-    function checkCode() {
-      var code = document.getElementById('trackingCode').value;
-      if (code === 'TR599652932') {
-        document.getElementById('shipmentDetails').style.display = 'block';
+    function checkTracking() {
+      const code = document.getElementById("trackingCode").value.trim();
+      if (code === "TR599652932") {
+        document.getElementById("shipmentDetails").classList.remove("hidden");
       } else {
-        alert('Invalid Tracking Code');
+        alert("Invalid Tracking Code. Please try again.");
       }
     }
   </script>
-
 </body>
 </html>
