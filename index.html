@@ -2,82 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Shipment Tracking - TR599652932</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipment Tracking - American Winners Shipping Co</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #f9f9f9;
-      color: #333;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
     }
-    h1 {
-      color: #0056b3;
+    header {
+      background: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
-    .section {
-      background: #fff;
-      padding: 15px;
-      margin-bottom: 20px;
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background: white;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .section h2 {
-      color: #444;
-      margin-bottom: 10px;
+    h2 {
+      color: #003366;
     }
-    .info p {
-      margin: 5px 0;
+    .tracking-form {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .tracking-form input {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+    }
+    .tracking-form button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #003366;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .tracking-form button:hover {
+      background: #0055aa;
+    }
+    .shipment-details {
+      display: none;
+      margin-top: 20px;
     }
     ul {
       list-style: none;
       padding: 0;
     }
-    ul li {
-      margin: 6px 0;
+    li {
+      margin: 5px 0;
       padding: 8px;
-      background: #eef3fb;
-      border-radius: 5px;
+      border-left: 4px solid #003366;
+      background: #f0f8ff;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>Shipment Tracking</h1>
+  <header>
+    <h1>American Winners Shipping Co</h1>
+    <p>Track your shipment with ease</p>
+  </header>
+  <main>
+    <h2>Enter Tracking Code</h2>
+    <div class="tracking-form">
+      <input type="text" id="trackingInput" placeholder="Enter tracking code">
+      <button onclick="checkTracking()">Track</button>
+      <p id="errorMessage" class="error"></p>
+    </div>
 
-  <div class="section">
-    <h2>Tracking Code</h2>
-    <p><strong>TR599652932</strong></p>
-  </div>
+    <div id="shipmentDetails" class="shipment-details">
+      <h2>Shipment Details</h2>
+      <p><strong>Tracking Code:</strong> TR599652932</p>
+      <p><strong>Shipper:</strong> Robert Agent Wood, Florida (robertagentwood@gmail.com)</p>
+      <p><strong>Recipient:</strong> Paul Wood, 35916 E 231st St S, Porter, Oklahoma, 74454, USA</p>
+      <p><strong>Current Location:</strong> Oklahoma</p>
+      <p><strong>Status:</strong> 🟡 In Transit – Item departed from Alabama</p>
+      <p><strong>Expected Delivery Date:</strong> 22 July 2025 (by end of day)</p>
 
-  <div class="section info">
-    <h2>Shipper Information</h2>
-    <p><strong>Name:</strong> Ron Delucca</p>
-    <p><strong>Location:</strong> Russia</p>
-    <p><strong>Email:</strong> deluccar1948@gmail.com</p>
-  </div>
+      <h3>Shipment History</h3>
+      <ul>
+        <li>June 25, 2025, 9:00 AM → Item received from shipper</li>
+        <li>June 25, 2025, 9:30 AM → Item departed from sorting facility in Florida</li>
+        <li>June 25, 2025, 10:30 AM → Item arrived at Jacksonville</li>
+        <li>June 25, 2025 → Item departed from a sorting facility in Jacksonville</li>
+        <li>June 25, 2025, 12:00 PM → Item received from shipper</li>
+        <li>June 25, 2025, 1:30 PM → Item departed from sorting facility in Florida</li>
+        <li>July 1, 2025, 7:45 PM → Item departed from a sorting facility in Georgia</li>
+        <li>July 1, 2025, 7:45 PM → Item stopped at Alabama</li>
+        <li>July 21, 2025, 10:00 PM → Item departed from Alabama</li>
+        <li>July 22, 2025, 7:00 AM → Item arrived in Oklahoma</li>
+        <li>31st August 2025, 1:30 AM → Item arrived at Halifax, Canada</li>
+        <li>31st August 2025, 1:40 AM → Item scanned at Halifax facility</li>
+        <li>31st August 2025, 1:55 AM → Item departed from a sorting facility in Halifax, Canada</li>
+        <li>31st August 2025, 3:30 AM → Item arrived at Boston, USA</li>
+        <li>31st August 2025, 3:40 AM → Item scanned at Boston facility</li>
+        <li>31st August 2025, 3:55 AM → Item departed from a sorting facility in Boston, USA</li>
+        <li>31st August 2025, 5:00 AM → Item arrived at New York, USA</li>
+        <li>31st August 2025, 5:10 AM → Item scanned at New York facility</li>
+        <li>31st August 2025, 5:25 AM → Item departed from a sorting facility in New York, USA</li>
+        <li>31st August 2025, 6:20 AM → Item arrived at Philadelphia, USA</li>
+        <li>31st August 2025, 6:30 AM → Item scanned at Philadelphia facility</li>
+        <li>31st August 2025, 6:45 AM → Item departed from a sorting facility in Philadelphia, USA</li>
+        <li>31st August 2025, 7:45 AM → Item arrived at Washington, D.C.</li>
+      </ul>
+    </div>
+  </main>
 
-  <div class="section info">
-    <h2>Receiver Information</h2>
-    <p><strong>Name:</strong> Matthew Joseph Estilette</p>
-    <p><strong>Location:</strong> USA</p>
-    <p><strong>Address:</strong> 1113 David St, New Iberia, LA 70560, USA</p>
-  </div>
-
-  <div class="section">
-    <h2>Shipment History</h2>
-    <ul>
-      <li>31st August 2025 – 1:30 AM – Halifax, Nova Scotia, Canada → Item arrived at Halifax, Canada</li>
-      <li>31st August 2025 – 1:40 AM – Halifax, Nova Scotia, Canada → Item scanned at Halifax facility</li>
-      <li>31st August 2025 – 1:55 AM – Halifax, Nova Scotia, Canada → Item departed from a sorting facility in Halifax, Canada</li>
-      <li>31st August 2025 – 3:30 AM – Boston, Massachusetts, USA → Item arrived at Boston, USA</li>
-      <li>31st August 2025 – 3:40 AM – Boston, Massachusetts, USA → Item scanned at Boston facility</li>
-      <li>31st August 2025 – 3:55 AM – Boston, Massachusetts, USA → Item departed from a sorting facility in Boston, USA</li>
-      <li>31st August 2025 – 5:00 AM – New York City, New York, USA → Item arrived at New York, USA</li>
-      <li>31st August 2025 – 5:10 AM – New York City, New York, USA → Item scanned at New York facility</li>
-      <li>31st August 2025 – 5:25 AM – New York City, New York, USA → Item departed from a sorting facility in New York, USA</li>
-      <li>31st August 2025 – 6:20 AM – Philadelphia, Pennsylvania, USA → Item arrived at Philadelphia, USA</li>
-      <li>31st August 2025 – 6:30 AM – Philadelphia, Pennsylvania, USA → Item scanned at Philadelphia facility</li>
-      <li>31st August 2025 – 6:45 AM – Philadelphia, Pennsylvania, USA → Item departed from a sorting facility in Philadelphia, USA</li>
-      <li>31st August 2025 – 7:45 AM – Washington D.C., USA → Item arrived at Washington, D.C.</li>
-    </ul>
-  </div>
+  <script>
+    function checkTracking() {
+      const input = document.getElementById('trackingInput').value.trim();
+      const details = document.getElementById('shipmentDetails');
+      const error = document.getElementById('errorMessage');
+      
+      if (input === "TR599652932") {
+        details.style.display = "block";
+        error.textContent = "";
+      } else {
+        details.style.display = "none";
+        error.textContent = "❌ Invalid tracking code. Please try again.";
+      }
+    }
+  </script>
 </body>
 </html>
